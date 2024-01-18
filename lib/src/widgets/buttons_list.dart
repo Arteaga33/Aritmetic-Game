@@ -58,7 +58,6 @@ class ButtonsList extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Center(
                 child: Container(
                   height: secondColumnHeight,
                   child: ListView.builder(
@@ -86,7 +85,6 @@ class ButtonsList extends StatelessWidget {
                     },
                   ),
                 ),
-              ),
             ),
           ],
         ));
