@@ -50,7 +50,7 @@ class ButtonsList extends StatelessWidget {
         // builds Widgets as they’re scrolled into view.
         body: Column(
           children: [
-            Container(
+            SizedBox(
               height: firstColumnHeight,
               child: Image.asset(
                 'assets/images/GameDec.png',

@@ -1,3 +1,4 @@
+import 'package:aritmetic_game/src/screens/addition_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -73,7 +74,9 @@ class AritmeticGame extends StatelessWidget {
                   case SettingsView.routeName:
                     return SettingsView(controller: settingsController);
                   case GameParameters.routeName:
-                    return const GameParameters();
+                    return GameParameters();
+                  case AdditionScreen.routeName:
+                    return AdditionScreen(numberOfNumbers: 2, numberOfDigits: 2, timeLimit: 10);
                   case ButtonsList.routeName:
                   default:
                     return const ButtonsList();
