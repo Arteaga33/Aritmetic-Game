@@ -8,6 +8,7 @@ import 'settings/settings_controller.dart';
 import 'settings/settings_view.dart';
 
 /// The Widget that configures your application.
+/// Simple flutter clean to avoid showing C++ tag on git hub.
 class AritmeticGame extends StatelessWidget {
   const AritmeticGame({
     super.key,
