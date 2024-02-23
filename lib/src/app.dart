@@ -74,7 +74,9 @@ class AritmeticGame extends StatelessWidget {
                   case SettingsView.routeName:
                     return SettingsView(controller: settingsController);
                   case GameParameters.routeName:
-                    return const GameParameters();
+                    return GameParameters();
+                  case AdditionScreen.routeName:
+                    return AdditionScreen(numberOfNumbers: 2, numberOfDigits: 2, timeLimit: 10);
                   case ButtonsList.routeName:
                   default:
                     return const ButtonsList();
