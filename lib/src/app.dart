@@ -1,3 +1,4 @@
+import 'package:aritmetic_game/src/screens/substraction_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:aritmetic_game/src/screens/addition_screen.dart';
 import 'package:flutter/material.dart';
@@ -85,6 +86,11 @@ class AritmeticGame extends StatelessWidget {
                         return GameParameters(
                             mathOperation:
                                 Provider.of<ParametersData>(context).mathData);
+                      case SubstractionScreen.routeName:
+                        return SubstractionScreen(
+                            numberOfNumbers: 2,
+                            numberOfDigits: 2,
+                            timeLimit: 20);
                       case AdditionScreen.routeName:
                         return AdditionScreen(
                             numberOfNumbers: 2,

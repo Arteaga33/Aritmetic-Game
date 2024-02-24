@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../screens/addition_screen.dart';
+import '../screens/substraction_screen.dart';
+import '../screens/multiplication_screen.dart';
+import '../screens/division_screen.dart';
 
 /// Game parameters chosen by the user as Input
 /// TODO: use the recieved parameters for each Arithmetic Game.
@@ -68,13 +71,38 @@ class GameParametersState extends State<GameParameters> {
                 int numberOfDigits =
                     int.tryParse(_numberOfDigitsController.text) ?? 1;
                 int timeLimit = int.tryParse(_timeLimitController.text) ?? 3;
-                AdditionScreen(numberOfNumbers: numberOfNumbers, numberOfDigits: numberOfDigits, timeLimit: timeLimit);
+                //TODO: delete code below and use it in the game arguments with a provider update.
+                AdditionScreen(
+                    numberOfNumbers: numberOfNumbers,
+                    numberOfDigits: numberOfDigits,
+                    timeLimit: timeLimit);
                 //I have to add here a conditional for different screens one for adition, one for subtraction, etc.
-                Navigator.restorablePushNamed(
-                  context,
-                  AdditionScreen.routeName,
-                );
-
+                switch (widget.mathOperation) {
+                  case 'Addition':
+                    Navigator.restorablePushNamed(
+                      context,
+                      AdditionScreen.routeName,
+                    );
+                    break;
+                  case 'Subtraction':
+                    Navigator.restorablePushNamed(
+                      context,
+                      SubstractionScreen.routeName,
+                    );
+                    break;
+                  case 'Multiplication':
+                    Navigator.restorablePushNamed(
+                      context,
+                      AdditionScreen.routeName,
+                    );
+                    break;
+                  case 'Division':
+                    Navigator.restorablePushNamed(
+                      context,
+                      AdditionScreen.routeName,
+                    );
+                    break;
+                }
                 // Proceed with the game setup or validation
                 // You can navigate to the game screen here passing the parameters,
                 // or perform any other actions based on the input parameters.
