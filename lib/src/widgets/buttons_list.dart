@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../settings/settings_view.dart';
 import 'game_parameters.dart';
 import 'operations_buttons.dart';
+import '../model/parameters_data.dart';
 
 /// Displays a list of SampleItems.
 class ButtonsList extends StatelessWidget {
@@ -81,6 +83,7 @@ class ButtonsList extends StatelessWidget {
                               context,
                               GameParameters.routeName,
                             );
+                            Provider.of<ParametersData>(context, listen: false).updateData(item.mathOperation);
                           });
                     },
                   ),

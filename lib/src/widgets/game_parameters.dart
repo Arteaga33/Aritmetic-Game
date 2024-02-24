@@ -7,6 +7,10 @@ import '../screens/addition_screen.dart';
 class GameParameters extends StatefulWidget {
   static const routeName = '/game_parameters';
 
+  final String mathOperation;
+
+  const GameParameters({super.key, required this.mathOperation});
+
   @override
   GameParametersState createState() => GameParametersState();
 }
