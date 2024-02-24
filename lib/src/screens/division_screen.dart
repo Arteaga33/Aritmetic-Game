@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:js_util';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -22,8 +21,8 @@ class DivisionScreen extends StatefulWidget {
 }
 
 class _DivisionScreenState extends State<DivisionScreen> {
-  late List<int> numbers;
-  late int correctAnswer;
+  late List<double> numbers;
+  late double correctAnswer;
   late int timeLeft;
   late Timer timer;
 
@@ -46,9 +45,9 @@ class _DivisionScreenState extends State<DivisionScreen> {
     Random random = Random();
     numbers = List.generate(
       widget.numberOfNumbers,
-      (index) => random.nextInt(pow(10, widget.numberOfDigits).toInt()),
+      (index) => random.nextDouble(),
     );
-    correctAnswer = numbers.reduce((a, b) => divide(a, b) );
+    correctAnswer = numbers.reduce((a, b) => a / b );
   }
 
   void startTimer() {

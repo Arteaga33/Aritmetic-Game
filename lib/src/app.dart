@@ -1,11 +1,13 @@
-import 'package:aritmetic_game/src/screens/substraction_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:aritmetic_game/src/screens/addition_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'widgets/game_parameters.dart';
+import 'screens/addition_screen.dart';
+import 'screens/substraction_screen.dart';
+import 'screens/multiplication_screen.dart';
+import 'screens/division_screen.dart';
 import 'widgets/buttons_list.dart';
 import 'settings/settings_controller.dart';
 import 'settings/settings_view.dart';
@@ -93,6 +95,16 @@ class AritmeticGame extends StatelessWidget {
                             timeLimit: 20);
                       case AdditionScreen.routeName:
                         return AdditionScreen(
+                            numberOfNumbers: 2,
+                            numberOfDigits: 2,
+                            timeLimit: 10);
+                      case MultiplicationScreen.routeName:
+                        return MultiplicationScreen(
+                            numberOfNumbers: 2,
+                            numberOfDigits: 2,
+                            timeLimit: 10);
+                      case DivisionScreen.routeName:
+                        return DivisionScreen(
                             numberOfNumbers: 2,
                             numberOfDigits: 2,
                             timeLimit: 10);

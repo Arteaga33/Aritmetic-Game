@@ -79,6 +79,7 @@ class GameParametersState extends State<GameParameters> {
                 //I have to add here a conditional for different screens one for adition, one for subtraction, etc.
                 switch (widget.mathOperation) {
                   case 'Addition':
+                  //Add function
                     Navigator.restorablePushNamed(
                       context,
                       AdditionScreen.routeName,
