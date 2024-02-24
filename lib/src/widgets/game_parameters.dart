@@ -93,13 +93,13 @@ class GameParametersState extends State<GameParameters> {
                   case 'Multiplication':
                     Navigator.restorablePushNamed(
                       context,
-                      AdditionScreen.routeName,
+                      MultiplicationScreen.routeName,
                     );
                     break;
                   case 'Division':
                     Navigator.restorablePushNamed(
                       context,
-                      AdditionScreen.routeName,
+                      DivisionScreen.routeName,
                     );
                     break;
                 }
