@@ -54,9 +54,12 @@ class ButtonsList extends StatelessWidget {
           children: [
             Container(
               height: firstColumnHeight,
-              child: Image.asset(
-                'assets/images/GameDec.png',
-                fit: BoxFit.cover,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(100.0),
+                child: Image.asset(
+                  'assets/images/GameDec.jpg',
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Expanded(
