@@ -98,14 +98,11 @@ class _AdditionScreenState extends State<AdditionScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ListView(
-              children: numbers.map((numbers){
+            //TODO: fix how the numbers get display. I looks ugly right now.
               Text(
                 'Numbers: ${numbers}',
                 style: const TextStyle(fontSize: 18.0),
-              );
-              }).toList(), 
-            ),
+              ),
             const SizedBox(height: 16.0),
             TextField(
               controller: _answerController,
