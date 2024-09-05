@@ -86,7 +86,7 @@ class ButtonsList extends StatelessWidget {
                               context,
                               GameParameters.routeName,
                             );
-                            Provider.of<ParametersData>(context, listen: false).updateData(item.mathOperation);
+                            Provider.of<ParametersData>(context, listen: false).updateMathOperationData(item.mathOperation);
                           });
                     },
                   ),

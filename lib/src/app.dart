@@ -90,24 +90,40 @@ class AritmeticGame extends StatelessWidget {
                                 Provider.of<ParametersData>(context).mathData);
                       case SubstractionScreen.routeName:
                         return SubstractionScreen(
-                            numberOfNumbers: 2,
-                            numberOfDigits: 2,
-                            timeLimit: 20);
+                          numberOfNumbers: Provider.of<ParametersData>(context)
+                              .numberOfNumbers,
+                          numberOfDigits: Provider.of<ParametersData>(context)
+                              .numberOfNumbers,
+                          timeLimit:
+                              Provider.of<ParametersData>(context).timeLimit,
+                        );
                       case AdditionScreen.routeName:
                         return AdditionScreen(
-                            numberOfNumbers: 2,
-                            numberOfDigits: 2,
-                            timeLimit: 10);
+                          numberOfNumbers: Provider.of<ParametersData>(context)
+                              .numberOfNumbers,
+                          numberOfDigits: Provider.of<ParametersData>(context)
+                              .numberOfNumbers,
+                          timeLimit:
+                              Provider.of<ParametersData>(context).timeLimit,
+                        );
                       case MultiplicationScreen.routeName:
                         return MultiplicationScreen(
-                            numberOfNumbers: 2,
-                            numberOfDigits: 2,
-                            timeLimit: 10);
+                          numberOfNumbers: Provider.of<ParametersData>(context)
+                              .numberOfNumbers,
+                          numberOfDigits: Provider.of<ParametersData>(context)
+                              .numberOfNumbers,
+                          timeLimit:
+                              Provider.of<ParametersData>(context).timeLimit,
+                        );
                       case DivisionScreen.routeName:
                         return DivisionScreen(
-                            numberOfNumbers: 2,
-                            numberOfDigits: 2,
-                            timeLimit: 10);
+                          numberOfNumbers: Provider.of<ParametersData>(context)
+                              .numberOfNumbers,
+                          numberOfDigits: Provider.of<ParametersData>(context)
+                              .numberOfNumbers,
+                          timeLimit:
+                              Provider.of<ParametersData>(context).timeLimit,
+                        );
                       case ButtonsList.routeName:
                       default:
                         return const ButtonsList();

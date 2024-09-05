@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../model/parameters_data.dart';
 import '../screens/addition_screen.dart';
 import '../screens/substraction_screen.dart';
 import '../screens/multiplication_screen.dart';
@@ -40,8 +42,8 @@ class GameParametersState extends State<GameParameters> {
               controller: _numberOfNumbersController,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                labelText: 'Number of Numbers',
-                hintText: 'Enter number of numbers',
+                labelText: 'Amount of Numbers',
+                hintText: 'Enter amount of numbers',
               ),
             ),
             const SizedBox(height: 16.0),
@@ -49,7 +51,7 @@ class GameParametersState extends State<GameParameters> {
               controller: _numberOfDigitsController,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                labelText: 'Number of Digits',
+                labelText: 'Quantity of Digits',
                 hintText: 'Enter number of digits',
               ),
             ),
@@ -65,18 +67,17 @@ class GameParametersState extends State<GameParameters> {
             const SizedBox(height: 32.0),
             ElevatedButton(
               onPressed: () {
+                //The text controller has the info.
                 // Validate and process the input parameters
                 int numberOfNumbers =
                     int.tryParse(_numberOfNumbersController.text) ?? 2;
                 int numberOfDigits =
                     int.tryParse(_numberOfDigitsController.text) ?? 1;
                 int timeLimit = int.tryParse(_timeLimitController.text) ?? 3;
-                //TODO: delete code below and use it in the game arguments with a provider update.
-                AdditionScreen(
-                    numberOfNumbers: numberOfNumbers,
-                    numberOfDigits: numberOfDigits,
-                    timeLimit: timeLimit);
-                //I have to add here a conditional for different screens one for adition, one for subtraction, etc.
+                //Pass info to the provider.
+                Provider.of<ParametersData>(context, listen: false).updateNumberOfNumbers(numberOfNumbers);
+                Provider.of<ParametersData>(context, listen: false).updateNumberOfDigits(numberOfDigits);
+                Provider.of<ParametersData>(context, listen: false).updateTimeLimit(timeLimit);
                 switch (widget.mathOperation) {
                   case 'Addition':
                   //Add function
@@ -104,9 +105,6 @@ class GameParametersState extends State<GameParameters> {
                     );
                     break;
                 }
-                // Proceed with the game setup or validation
-                // You can navigate to the game screen here passing the parameters,
-                // or perform any other actions based on the input parameters.
               },
               child: Text('Start Game'),
             ),

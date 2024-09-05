@@ -66,7 +66,10 @@ class _AdditionScreenState extends State<AdditionScreen> {
   void validateAnswer(String answer) {
     int userAnswer = int.tryParse(answer) ?? 0;
     if (userAnswer == correctAnswer) {
+      timeLeft += 5;
       showPopup('Correct answer', Colors.lightGreen);
+      //TODO: Add something here to extend the timer.
+      //Also refresh generated numbers and rebuild widget I think.
     } else {
       showPopup('Incorrect answer, keep trying', Colors.red);
     }
@@ -95,9 +98,13 @@ class _AdditionScreenState extends State<AdditionScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'Numbers: $numbers',
-              style: const TextStyle(fontSize: 18.0),
+            ListView(
+              children: numbers.map((numbers){
+              Text(
+                'Numbers: ${numbers}',
+                style: const TextStyle(fontSize: 18.0),
+              );
+              }).toList(), 
             ),
             const SizedBox(height: 16.0),
             TextField(
@@ -117,6 +124,9 @@ class _AdditionScreenState extends State<AdditionScreen> {
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
+                print(widget.numberOfNumbers.toString() + " one");
+                print(widget.numberOfDigits.toString() + " two");
+                print(widget.timeLimit.toString() + " Three");
                 validateAnswer(_answerController.text);
               },
               child: const Text('Submit Answer'),
